@@ -1,8 +1,9 @@
 import EditTopicForm from "@/components/EditTopicForm";
+const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 
 const getTopicById = async (id) => {
     try {
-        const res = await fetch(`/api/topics/${id}`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/topics/${id}`,{
             cache: "no-store",
         });
 

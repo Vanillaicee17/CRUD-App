@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 
 export default function AddTopic() {
     const [title, setTitle] = useState("");
@@ -15,7 +16,7 @@ export default function AddTopic() {
         }
 
         try {
-            const res = await fetch('/api/topics', {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/topics`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
