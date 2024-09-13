@@ -1,10 +1,12 @@
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
+const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+
 
 const getTopics = async () => {
     try {
-        const res = await fetch('/api/topics', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/topics`, {
             cache: "no-store", // Disables caching for fresh data
         });
 
